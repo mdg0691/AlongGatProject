@@ -7,12 +7,12 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 import './App.css';
 
-const toDoParse = JSON.parse(localStorage.getItem('todo')) // []
+
 // const toDoParse2 = JSON.parse(localStorage.getItem('todo2')) // []
 function App() {
-
+  const toDoParse = JSON.parse(localStorage.getItem('todo')) // []
   // Tasks (ToDo List) State
-  const [toDo, setToDo] = useState(toDoParse);
+  const [toDo, setToDo] = useState(toDoParse || []);
   
   
 
@@ -82,7 +82,7 @@ function App() {
 ////////////////////////////////// booorar linea de ref
 
 const toDoParse2 = JSON.parse(localStorage.getItem('todo2')) // []
-const [toDo2, setToDo2] = useState(toDoParse2);
+const [toDo2, setToDo2] = useState(toDoParse2 || []);
 
 useEffect(()=> {
   localStorage.setItem("todo2", JSON.stringify(toDo2));
