@@ -1,20 +1,22 @@
-.body {
-  background-color: #333;
-  color: #fff;
-}
-
 .App {
   text-align: center;
   display: flex;
+  flex-direction: row;
+}
+@media(max-width: 800px) {
+  .App{
+    flex-direction: column;
+  }
 }
 .conteiner-information{
   padding: 10px 140px 10px 15px;
+  width: 100%
 }
-.conteiner-information-important {
+/* .conteiner-information-important {
   display:flex;
-}
+} */
 .taskBg {
-  background-color: #ece7e7;
+  background-color: #212121;
   border-radius: 6px;
   margin-bottom: 20px;
   padding: 10px 140px 10px 15px;
