@@ -1,4 +1,4 @@
-import {useState} from 'react';
+import {useEffect, useState} from 'react';
 import AddTaskForm from './components/AddTaskForm.jsx';
 import UpdateForm from './components/UpdateForm.jsx';
 import ToDo from './components/ToDo.jsx';
@@ -7,11 +7,19 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 import './App.css';
 
+const toDoParse = JSON.parse(localStorage.getItem('todo')) // []
+// const toDoParse2 = JSON.parse(localStorage.getItem('todo2')) // []
 function App() {
 
   // Tasks (ToDo List) State
-  const [toDo, setToDo] = useState([]);
+  const [toDo, setToDo] = useState(toDoParse);
+  
+  
 
+  useEffect(()=> {
+    localStorage.setItem("todo", JSON.stringify(toDo));
+  },[toDo])
+  // const parsetoDo = JSON.parse(str)
   // Temp State
   const [newTask, setNewTask] = useState('');
   const [updateData, setUpdateData] = useState('');
@@ -73,7 +81,13 @@ function App() {
   }
 ////////////////////////////////// booorar linea de ref
 
-const [toDo2, setToDo2] = useState([]);
+const toDoParse2 = JSON.parse(localStorage.getItem('todo2')) // []
+const [toDo2, setToDo2] = useState(toDoParse2);
+
+useEffect(()=> {
+  localStorage.setItem("todo2", JSON.stringify(toDo2));
+},[toDo2])
+
 
   // Temp State
   const [newTask2, setNewTask2] = useState('');
