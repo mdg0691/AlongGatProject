@@ -2,11 +2,12 @@ import {useEffect, useState} from 'react';
 import AddTaskForm from './components/AddTaskForm.jsx';
 import UpdateForm from './components/UpdateForm.jsx';
 import ToDo from './components/ToDo.jsx';
+import Weather from './components/Weather.jsx'
+// import NewsFeed from './components/NewsFeed';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 import './App.css';
-
 
 // const toDoParse2 = JSON.parse(localStorage.getItem('todo2')) // []
 function App() {
@@ -151,10 +152,12 @@ useEffect(()=> {
 
   return (
     <div className="container App">
+
       <div className='conteiner-information'>
-      <br /><br />
-    <h2>INFORMATION</h2>
-    <br /><br />
+      
+              <br /><br />
+            <h2>INFORMATION</h2>
+            <br /><br />
 
     {updateData && updateData ? (
       <UpdateForm 
@@ -214,6 +217,14 @@ useEffect(()=> {
       />
     )}
       </div>
+      <div className='sizeWeather'>
+        <Weather/>
+      </div>
+      {/* <div className='sizeWeather'>
+        <NewsFeed />
+
+      </div> */}
+      
     </div>
   );
 }

@@ -8,9 +8,14 @@
     flex-direction: column;
   }
 }
+.sizeWeather{
+ width: 110%;
+ height: 300px;
+ overflow: scroll;
+}
 .conteiner-information{
-  padding: 10px 140px 10px 15px;
-  width: 100%
+  padding: 10px 100px 10px 15px;
+  width: 50%
 }
 /* .conteiner-information-important {
   display:flex;
