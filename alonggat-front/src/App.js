@@ -1,7 +1,8 @@
 import './App.css';
 import axios from 'axios'
-import {useEffect, useState} from 'react'
-import Feed from './components/Feed'
+import {useEffect, useState} from 'react';
+import Feed from './components/Feed';
+import Weather from './components/Weather';
 function App() {
 
   const [articles, setArticles] = useState([])
@@ -23,56 +24,64 @@ function App() {
 
   return (
     <div className="App">
-      <header className="App-header">
-        <h2>
-          Israel Today
-        </h2>
-        <div className='conteiner'>
-          <div className='column'>
-          {articles.map((item,i) => 
-                  <Feed
-                    key={i}
-                    title={item.item.title}
-                    link = {item.item.link}
-                    date = {item.item.pubDate}
-                  />
-                )}
-          </div>
-          <div className='column'>
-          {articles.map((item,i) => 
-                  <Feed
-                    key={i}
-                    title={item.item.title}
-                    link = {item.item.link}
-                    date = {item.item.pubDate}
-                  />
-                )}
-          </div>
-          <div className='column'>
-            <div className='row'>
-              <div className='col'>
-              {articles.map((item,i) => 
-                  <Feed
-                    key={i}
-                    title={item.item.title}
-                    link = {item.item.link}
-                    date = {item.item.pubDate}
-                  />
-                )}    
-              </div> 
-              <div className='col'>
-                {articles.map((item,i) => 
-                  <Feed
-                    key={i}
-                    title={item.item.title}
-                    link = {item.item.link}
-                    date = {item.item.pubDate}
-                  />
-                )}
-              </div>
-            </div>
+    <header className="App-header">
+      <div class="container">
+        <div class="column">
+          <div class="content">
+            <p>
+        Israel Today
+        </p>
+        {articles.map((item,i) => 
+          <Feed
+            key={i}
+            title={item.item.title}
+            link = {item.item.link}
+            date = {item.item.pubDate}
+          />
+        )}
           </div>
         </div>
+        <div class="column">
+          <div class="content">
+            <p>
+        Israel Today
+        </p>
+        {articles.map((item,i) => 
+          <Feed
+            key={i}
+            title={item.item.title}
+            link = {item.item.link}
+            date = {item.item.pubDate}
+          />
+        
+        )}
+          </div>
+        </div>
+        <div class="column">
+          <div className='row'>
+            <div class="contentRow">
+             <Weather/>
+            </div>
+          </div>
+          <div className='row'>
+          <div class="contentRow">
+            <p>
+        Israel Today
+        </p>
+        {articles.map((item,i) => 
+          <Feed
+            key={i}
+            title={item.item.title}
+            link = {item.item.link}
+            date = {item.item.pubDate}
+          />
+        
+        )}
+          </div>
+          </div>
+        </div>
+    </div>
+
       </header>
     </div>
   );
