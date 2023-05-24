@@ -1,5 +1,6 @@
 import './App.css';
 import axios from 'axios'
+import 'bootstrap/dist/css/bootstrap.css';
 import {useEffect, useState} from 'react';
 import Feed from './components/Feed';
 import Weather from './components/Weather';
@@ -26,7 +27,7 @@ function App() {
     <div className="App">
     <header className="App-header">
       <div class="container">
-        <div class="column">
+        <div class="col-9">
           <div class="content">
             <p>
         Israel Today
@@ -41,23 +42,8 @@ function App() {
         )}
           </div>
         </div>
-        <div class="column">
-          <div class="content">
-            <p>
-        Israel Today
-        </p>
-        {articles.map((item,i) => 
-          <Feed
-            key={i}
-            title={item.item.title}
-            link = {item.item.link}
-            date = {item.item.pubDate}
-          />
         
-        )}
-          </div>
-        </div>
-        <div class="column">
+        <div class="col-3">
           <div className='row'>
             <div class="contentRow">
              <Weather/>
