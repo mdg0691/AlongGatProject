@@ -4,6 +4,7 @@ import 'bootstrap/dist/css/bootstrap.css';
 import {useEffect, useState} from 'react';
 import Feed from './components/Feed';
 import Weather from './components/Weather';
+import { Information } from './components/Information.jsx';
 function App() {
 
   const [articles, setArticles] = useState([])
@@ -21,26 +22,35 @@ function App() {
   useEffect(() => {
     getArticles()
   },[])
-  
+// Función para desplazarse automáticamente hacia abajo
+function scrollDown() {
+  const container = document.getElementById('Appp');
+  container.scrollTo({
+    top: container.scrollHeight,
+    behavior: 'smooth'
+  });
+}
+
+// Función para desplazarse automáticamente hacia arriba
+function scrollUp() {
+  const container = document.getElementById('Appp');
+  container.scrollTo({
+    top: 0,
+    behavior: 'smooth'
+  });
+}
+
+// Temporizador para desplazarse automáticamente hacia abajo cada 3 segundos
+setInterval(scrollDown, 3000);
+setInterval(scrollUp, 3000);
+
 
   return (
-    <div className="App">
+    <div id="Appp" className="App">
     <header className="App-header">
       <div class="container">
         <div class="col-9">
-          <div class="content">
-            <p>
-        Israel Today
-        </p>
-        {articles.map((item,i) => 
-          <Feed
-            key={i}
-            title={item.item.title}
-            link = {item.item.link}
-            date = {item.item.pubDate}
-          />
-        )}
-          </div>
+          <Information/>
         </div>
         
         <div class="col-3">

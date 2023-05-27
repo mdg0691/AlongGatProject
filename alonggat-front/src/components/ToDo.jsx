@@ -1,4 +1,7 @@
 import React from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faPen } from '@fortawesome/free-solid-svg-icons';
+import { faTrash } from '@fortawesome/free-solid-svg-icons'
 
 // import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 const ToDo = ({ toDo, markDone, setUpdateData, deleteTask }) => {
@@ -29,14 +32,14 @@ const ToDo = ({ toDo, markDone, setUpdateData, deleteTask }) => {
                       status: task.status ? true : false
                     }) }
                   >
-                    {/* <FontAwesomeIcon icon={faPen} /> */}
+                    <FontAwesomeIcon icon={faPen} />
                   </span>
                 )}
 
                 <span title="Delete"
                   onClick={() => deleteTask(task.id)}
                 >
-                  {/* <FontAwesomeIcon icon={faTrashCan} /> */}
+                  <FontAwesomeIcon icon={faTrash} />
                 </span>
               </div>
             </div>
