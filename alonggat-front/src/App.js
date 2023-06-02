@@ -48,19 +48,19 @@ setInterval(scrollUp, 3000);
   return (
     <div id="Appp" className="App">
     <header className="App-header">
-      <div class="container">
-        <div class="col-9">
+      <div className="container">
+        <div className="col-9 card-information">
           <Information/>
         </div>
         
-        <div class="col-3">
-          <div className='row'>
-            <div class="contentRow">
+        <div className="col-3 card-information">
+          <div className='row box-content'>
+            <div className='content-wheater clearfix'>
              <Weather/>
             </div>
           </div>
-          <div className='row'>
-          <div class="contentRow">
+          <div className='row box-content'>
+          <div className='content-news'>
             <p>
         Israel Today
         </p>
