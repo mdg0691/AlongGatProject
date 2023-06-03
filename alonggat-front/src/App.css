@@ -61,6 +61,7 @@
   /* max-height: 50vh; */
   padding: 1px;
   border: none;
+
   /* border: 5px solid rgb(206, 206, 214); */
 }
 .box-content-down{
@@ -85,7 +86,7 @@
   border-radius: 30px;
   padding: 2px; /* Asegura que no haya relleno interno */
   margin: 0;
-  overflow: scroll;
+  overflow:auto;
 }
 .content-news {
   position: relative;
@@ -98,6 +99,10 @@
   margin: 0;
   overflow: hidden;
   /* box-sizing: border-box; */
+}
+.news{
+  background-color: #282c34;
+  border-radius: 20px;
 }
 .clearfix::after {
   content: "";

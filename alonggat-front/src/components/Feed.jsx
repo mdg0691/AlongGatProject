@@ -5,8 +5,10 @@ const Feed = ({title, link , date}) => {
 
     return(
         <>
-            <h4>{title}</h4>
-            <p>{articleDate}</p>
+            <div className="news">
+                <h4>{title}</h4>
+                <p>{articleDate}</p>
+            </div>
         </>
     )
 }
