@@ -8,7 +8,11 @@
   width: 100%;
   height: 100vh;
 }
-
+.App-header {
+  background-color: #282c34;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
 .container {
   display: flex;
   justify-content: center;
@@ -104,7 +108,7 @@
 .taskBg {
   background-color: #212121;
   border-radius: 6px;
-  font-size: 10px;
+  font-size: 12px;
   margin-bottom: 4px;
   padding: 5px 5px 5px 5px;
   text-align: left;
@@ -124,7 +128,7 @@
   height: 26px;
   display: flex;
   text-align: center;
-  font-size: 7px;
+  font-size: 12px;
   margin-right: 8px;
   align-items: center;
   justify-content: center;
@@ -159,6 +163,6 @@
   color: yellow;
 }
 
-.mr-20 {
+ .mr-20 {
   margin-right: 20px;
-}
+} 

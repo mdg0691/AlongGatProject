@@ -151,9 +151,9 @@ return(
     <div class="content row">
           <div className='col-6 ' >
       
-                    <br /><br />
-                  <h2>INFORMATION</h2>
-                  <br /><br />
+                    <br />
+                  <h3>INFORMATION</h3>
+                  
 
               {updateData && updateData ? (
               <UpdateForm 
@@ -183,9 +183,9 @@ return(
               </div>
               {/* ----------------------------------------------- borrar desde aqui*/}
               <div className='col-6' >
-              <br /><br />
+              <br />
               <h2>IMPORTANT INFORMATION</h2>
-              <br /><br />
+              
 
 
 
