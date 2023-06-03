@@ -91,18 +91,20 @@
 .content-news {
   position: relative;
   /* max-width:50% ; */
-  /* max-height: 75vh; */
+  max-height: 72vh;
   border: none;
   /* background-color: aquamarine; */
   border-radius: 30px;
   padding: 1px; /* Asegura que no haya relleno interno */
   margin: 0;
-  overflow: scroll;
+  overflow:scroll;
   /* box-sizing: border-box; */
 }
 .news{
   background-color: #282c34;
-  border-radius: 20px;
+  border-radius: 10px;
+  position: relative;
+  /* overflow: scroll; */
 }
 .clearfix::after {
   content: "";
