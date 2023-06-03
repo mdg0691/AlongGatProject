@@ -11,7 +11,8 @@ function App() {
   console.log(articles)
   const getArticles = async () => {
     try{
-      const res = await axios.get("http://localhost:4000/")
+      const res = await axios.get("https://alonggat-back.vercel.app/")
+      // const res = await axios.get("http://localhost:4000/")
       setArticles(res.data)
 
     }catch(error){
