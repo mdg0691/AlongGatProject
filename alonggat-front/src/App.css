@@ -10,51 +10,89 @@
 }
 
 .container {
+  display: flex;
+  justify-content: center;
   margin: 1px;
   border: 2px solid rgba(205, 192, 192, 0.13);
   min-width: 100%;
   height: 100vh;
   display: flex;
   padding: 2px;
+  border: none;
   
 }
 .card-information{
+
   position: relative;
   border: 1px solid rgb(206, 206, 214);
+  background-color: rgb(109, 105, 100);
   border-radius: 10px;
   padding: 2px;
   margin: 1px;
+  justify-content: center;
   align-items: center;
+  /* align-content: center; */
   display: flex;
   flex-wrap: wrap;
+  border: none;
 }
-
-.box-content{
+.content{
+  display: flex;
+  position:relative;
+  flex-wrap: wrap;
+  /* left: 11.5px; */
+  height: 100%;
+  border-radius: 10px;
+  min-width: 100%;
+  /* background-color: aqua; */
+  border: none;
+}
+.box-content-up{
   
   display: flex;
+  align-items: center;
+  justify-content: center; 
+  /* background-color:blueviolet; */
   /* display: flex; */
-  max-height: 50vh;
-  padding: 4px;
+  /* max-height: 50vh; */
+  padding: 1px;
+  border: none;
+  /* border: 5px solid rgb(206, 206, 214); */
+}
+.box-content-down{
+  
+  display: flex;
+  align-items: center; 
+  justify-content: center;
+  /* background-color:rgb(43, 226, 64); */
+  max-width: 100%;
+  /* display: flex; */
+  /* max-height: 50vh; */
+  padding: 1px;
+  border: none;
   /* border: 5px solid rgb(206, 206, 214); */
 }
 .content-wheater {
-  width: 100%;
+  display: flex;
+  position: relative;
+  border: none;
+  /* background-color: antiquewhite; */
   max-height: 25vh;
-  box-sizing: border-box;
   border-radius: 30px;
-  padding: 0; /* Asegura que no haya relleno interno */
+  padding: 2px; /* Asegura que no haya relleno interno */
   margin: 0;
   overflow: scroll;
-  /* box-sizing: border-box; */
 }
 .content-news {
-  width: 100%;
-  max-height: 100%;
-  box-sizing: border-box;
+  position: relative;
+  /* max-width:50% ; */
+  /* max-height: 75vh; */
+  border: none;
+  /* background-color: aquamarine; */
   border-radius: 30px;
-  padding: 0 0 0 40px; /* Asegura que no haya relleno interno */
+  padding: 1px; /* Asegura que no haya relleno interno */
   margin: 0;
-  overflow: scroll;
+  overflow: hidden;
   /* box-sizing: border-box; */
 }
 .clearfix::after {
@@ -62,29 +100,7 @@
   display: table;
   clear: both;
 }
-.card-panel{
-  border: 7px solid rgba(232, 223, 223, 0.13);
-}
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.conteiner-information{
-  padding: 10px 100px 10px 15px;
-  width: 50%
-}
-
-/* .conteiner-information-important {
-  display:flex;
-} */
 .taskBg {
   background-color: #212121;
   border-radius: 6px;

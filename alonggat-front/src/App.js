@@ -54,12 +54,12 @@ setInterval(scrollUp, 3000);
         </div>
         
         <div className="col-3 card-information">
-          <div className='row box-content'>
+          <div className='row box-content-up'>
             <div className='content-wheater clearfix'>
              <Weather/>
             </div>
           </div>
-          <div className='row box-content'>
+          <div className='row box-content-down'>
           <div className='content-news'>
             <p>
         Israel Today
