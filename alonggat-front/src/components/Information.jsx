@@ -150,11 +150,7 @@ useEffect(()=> {
 return(
     <div class="content row">
           <div className='col-6 ' >
-      
-                    <br />
                   <h3>INFORMATION</h3>
-                  
-
               {updateData && updateData ? (
               <UpdateForm 
               updateData={updateData}
@@ -184,10 +180,7 @@ return(
               <div className='col-6' >
               
               <h2>IMPORTANT INFORMATION</h2>
-              <br />
-
-
-
+          
               {/* Display ToDos */}
 
               {toDo2 && toDo2.length ? '' : 'No Information...'}
