@@ -6,8 +6,8 @@ const Feed = ({title, link , date}) => {
     return(
         <>
             <div className="news">
-                <h4>{title}</h4>
-                <p>{articleDate}</p>
+                <h6>{title}</h6>
+                <h7>{articleDate}</h7>
             </div>
         </>
     )

@@ -41,15 +41,15 @@ const deleteTask = (id) => {
 
 // Mark task as done or completed
 ///////////////////////////
-const markDone = (id) => {
-  let newTask = toDo.map( task => {
-    if( task.id === id ) {
-      return ({ ...task, status: !task.status })
-    }
-    return task;
-  })
-  setToDo(newTask);
-}
+// const markDone = (id) => {
+//   let newTask = toDo.map( task => {
+//     if( task.id === id ) {
+//       return ({ ...task, status: !task.status })
+//     }
+//     return task;
+//   })
+//   setToDo(newTask);
+// }
 
 // Cancel update
 ///////////////////////////
@@ -111,15 +111,15 @@ useEffect(()=> {
 
   // Mark task as done or completed
   ///////////////////////////
-  const markDone2 = (id) => {
-    let newTask2 = toDo2.map( task => {
-      if( task.id === id ) {
-        return ({ ...task, status: !task.status })
-      }
-      return task;
-    })
-    setToDo2(newTask2);
-  }
+  // const markDone2 = (id) => {
+  //   let newTask2 = toDo2.map( task => {
+  //     if( task.id === id ) {
+  //       return ({ ...task, status: !task.status })
+  //     }
+  //     return task;
+  //   })
+  //   setToDo2(newTask2);
+  // }
 
   // Cancel update
   ///////////////////////////
@@ -176,16 +176,15 @@ return(
 
               <ToDo
               toDo={toDo}
-              markDone={markDone}
               setUpdateData={setUpdateData}
               deleteTask={deleteTask}
               />
               </div>
               {/* ----------------------------------------------- borrar desde aqui*/}
               <div className='col-6' >
-              <br />
-              <h2>IMPORTANT INFORMATION</h2>
               
+              <h2>IMPORTANT INFORMATION</h2>
+              <br />
 
 
 

@@ -106,20 +106,16 @@
   position: relative;
   /* overflow: scroll; */
 }
-.clearfix::after {
-  content: "";
-  display: table;
-  clear: both;
-}
 
 .taskBg {
-  background-color: #212121;
+  background-color:#282c34;
   border-radius: 6px;
-  font-size: 12px;
-  margin-bottom: 4px;
-  padding: 5px 5px 5px 5px;
+  font-size: 22px;
+  margin-bottom: 20px;
+  padding: 5px 80px 5px 5px;
   text-align: left;
   position: relative;
+
 }
 
 .taskBg div {
@@ -129,14 +125,14 @@
 
 .taskNumber {
   color: #999;
-  border: 1px solid #999;
+  border: 2px solid #999;
   border-radius: 50%;
   width: 26px;
   height: 26px;
   display: flex;
   text-align: center;
-  font-size: 12px;
-  margin-right: 8px;
+  font-size: 12px ;
+  margin-right: 10px;
   align-items: center;
   justify-content: center;
 }
