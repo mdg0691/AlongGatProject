@@ -148,7 +148,7 @@ useEffect(()=> {
   }
 
 return(
-    <div class="content row">
+    <div className="content row">
           <div className='col-6 ' >
                   <h3>INFORMATION</h3>
               {updateData && updateData ? (

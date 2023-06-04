@@ -7,43 +7,35 @@ import Weather from './components/Weather';
 import { Information } from './components/Information.jsx';
 function App() {
 
-  const [articles, setArticles] = useState([])
-  console.log(articles)
-  const getArticles = async () => {
-    try{
-      const res = await axios.get("https://alonggat-back.vercel.app/")
-      // const res = await axios.get("http://localhost:4000/")
-      setArticles(res.data)
+  const [articles, setArticles] = useState([]);
 
-    }catch(error){
-      console.log(error)
-    }
+console.log(articles);
+
+const getArticles = async () => {
+  try {
+    // const res = await axios.get("https://alonggat-back.vercel.app/");
+    const res = await axios.get("http://localhost:4000/");
+    setArticles(res.data);
+  } catch (error) {
+    console.log(error);
   }
+};
 
-  useEffect(() => {
-    getArticles()
-  },[])
-// Función para desplazarse automáticamente hacia abajo
-function scrollDown() {
-  const container = document.getElementById('Appp');
-  container.scrollTo({
-    top: container.scrollHeight,
-    behavior: 'smooth'
-  });
-}
+useEffect(() => {
+  // Fetch data initially
+  getArticles();
 
-// Función para desplazarse automáticamente hacia arriba
-function scrollUp() {
-  const container = document.getElementById('Appp');
-  container.scrollTo({
-    top: 0,
-    behavior: 'smooth'
-  });
-}
+  // Fetch data every 10 minutes
+  const interval = setInterval(() => {
+    getArticles();
+  }, 10 * 60 * 1000); // 10 minutes in milliseconds
 
-// Temporizador para desplazarse automáticamente hacia abajo cada 3 segundos
-setInterval(scrollDown, 3000);
-setInterval(scrollUp, 3000);
+  // Clean up the interval when the component unmounts or when the dependency array changes
+  return () => clearInterval(interval);
+}, []);
+
+
+
 
 
   return (
