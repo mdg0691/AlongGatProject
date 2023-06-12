@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import ReactWeather, { useOpenWeather } from 'react-open-weather';
+import ReactWeather, { useOpenWeather } from "react-open-weather" ;
 
 const useWeatherData = (refreshInterval) => {
   const { data, isLoading, errorMessage } = useOpenWeather({
@@ -25,6 +25,10 @@ const useWeatherData = (refreshInterval) => {
 
 const Weather = () => {
   const { data, isLoading, errorMessage } = useWeatherData(500);
+
+  useEffect(() => {
+    console.log(data); // Verificar los datos en la consola
+  }, [data]);
 
   return (
     <ReactWeather

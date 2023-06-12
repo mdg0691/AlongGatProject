@@ -166,15 +166,15 @@
 /* desde aqui es relacionado al banner news */
 
 footer{
-  display: grid;
+  /* display: grid; */
   justify-content: center;
   /* margin: 1px; */
   border: 2px solid rgba(205, 192, 192, 0.13);
-  
+  align-items: center;
   min-width: 100%;
-  /* min-height: 90vh; */
+  min-height: 9.7vh;
   display: flex;
-  padding-bottom: 4.2vh;
+  /* padding-bottom: 3.4vh; */
   border: none;
   /* height: 5%; */
   background-color: #282c34;;
@@ -183,31 +183,35 @@ footer{
 
 /* // Styling */
 .slider {
-	/* background-color: #282c34; */
-	/* box-shadow: 0 10px 20px -5px rgba(0, 0, 0, 0.125); */
-	max-height: 53px;
+	min-height: 100px;
   width: 99%;
-  /* border-radius: 15px; */
   border-radius: 10px;
   background-color:  #282c34;
-  /* padding: 2px; */
-	margin-top: 0.7vh;
-  padding: 0px 0px 0px 2px;
+	/* margin-top: 0.7vh; */
+  /* padding: 0px 0px 0px 2px; */
 	overflow: hidden;
 	position: relative;
-	/* min-width: 95vh; */
-  display: grid;
+  display: flexbox;
+  justify-content: center;
+  align-items: center;
   place-items: center;
 }
 .news{
   place-items: center;
   padding: 0;
   margin: 0;
-  /* border-radius: 15px; */
+  border: 2px solid #999;
   position: relative;
   background-color: rgb(109, 105, 100);
   width: 100%;
-  transition: 2s;
+  min-height: 100px;
+  transition: 3s;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.news h6{
+  font-size: 1.5rem;
 }
 .news:hover{
   transform: translateZ(20px);

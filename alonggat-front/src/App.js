@@ -28,7 +28,7 @@ useEffect(() => {
   // Fetch data every 10 minutes
   const interval = setInterval(() => {
     getArticles();
-  }, 10000); // 10 minutes in milliseconds
+  }, 5 * 60 * 1000); // 10 minutes in milliseconds
 
   // Clean up the interval when the component unmounts or when the dependency array changes
   return () => clearInterval(interval);

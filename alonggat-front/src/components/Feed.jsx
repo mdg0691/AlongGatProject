@@ -8,7 +8,7 @@ const Feed = ({title, link , date}) => {
         <div class="slide">
 			        {/* <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/557257/1.png" height="100" width="250" alt="" /> */}
                     <div className="news">
-                        <h6>{title}</h6>
+                        <h6 className="news-title">{title}</h6>
                         <h6>{articleDate}</h6>
                     </div>
         </div>        
