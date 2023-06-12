@@ -48,7 +48,8 @@ useEffect(() => {
           </div>
           
           <div className="col-3 card-information">
-            
+              <img src={process.env.PUBLIC_URL + '/SiemensEnergyIcon.jpg'} alt="Imagen Siemens Energy" />
+
               <Weather/>
             
           </div>
