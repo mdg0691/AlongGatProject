@@ -1,31 +1,44 @@
-import RSSParser from "rss-parser"
-import cors from "cors"
-import express from "express"
+import RSSParser from "rss-parser";
+import cors from "cors";
+import express from "express";
+const feedURL = "https://www.israelhayom.co.il/rss.xml";
+// const feedURL = "https://www.israeltoday.co.il/read/israel/feed/";
+const parser = new RSSParser();
+let articles = [];
 
-// const feedURL = "http://netflixtechblog.com/feed"
-const feedURL ="https://www.israeltoday.co.il/read/israel/feed/"
+const parse = async () => {
+  try {
+    const feed = await parser.parseURL(feedURL);
+    articles = feed.items.map(item => ({ item }));
+  } catch (error) {
+    console.error("Error parsing RSS:", error);
+  }
+};
 
-const parser = new RSSParser()
-const articles =[]
+parse();
 
-const parse =async url =>{
-    const feed = await parser.parseURL(url)
-    console.log(feed.title)
-    feed.items.forEach(item => 
-        articles.push({item})
-        // console.log(`${item.title}\n ${item.link}`)
-        )
-}
+const app = express();
+app.use(cors());
 
-parse(feedURL)
+const updateInterval = 50000; // 5 seconds
 
-const app = express()
-app.use(cors())
+// Function to periodically fetch and parse the RSS feed
+const updateArticles = () => {
+  parse();
+  console.log("set time out")
+  setTimeout(updateArticles, updateInterval);
+};
 
-const server = app.listen("4000", () =>{
-    console.log("server on port 4000")
-})
-app.get('/', (req,res) => {
-    res.send(articles)
-})
-export default server
+updateArticles();
+
+const server = app.listen("4000", () => {
+  console.log("Server listening on port 4000");
+});
+
+app.get("/", async (req, res) => {
+  await res.send(articles);
+  console.log(articles) 
+  console.log("feed updating")
+});
+
+export default server;

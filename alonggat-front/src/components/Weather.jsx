@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import ReactWeather, { useOpenWeather } from 'react-open-weather';
 
 const useWeatherData = (refreshInterval) => {
@@ -10,11 +10,9 @@ const useWeatherData = (refreshInterval) => {
     unit: 'metric', // values are (metric, standard, imperial)
   });
 
-  const [refreshCount, setRefreshCount] = useState(0);
-
   useEffect(() => {
     const intervalId = setInterval(() => {
-      setRefreshCount((prevCount) => prevCount + 1);
+      console.log('El componente Weather se ha actualizado');
     }, refreshInterval);
 
     return () => {
@@ -26,7 +24,7 @@ const useWeatherData = (refreshInterval) => {
 };
 
 const Weather = () => {
-  const { data, isLoading, errorMessage } = useWeatherData(5000);
+  const { data, isLoading, errorMessage } = useWeatherData(500);
 
   return (
     <ReactWeather

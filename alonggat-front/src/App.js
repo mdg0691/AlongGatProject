@@ -28,7 +28,7 @@ useEffect(() => {
   // Fetch data every 10 minutes
   const interval = setInterval(() => {
     getArticles();
-  }, 10 * 60 * 1000); // 10 minutes in milliseconds
+  }, 10000); // 10 minutes in milliseconds
 
   // Clean up the interval when the component unmounts or when the dependency array changes
   return () => clearInterval(interval);
@@ -39,39 +39,37 @@ useEffect(() => {
 
 
   return (
-    <div id="Appp" className="App">
-    <header className="App-header">
-      <div className="container">
-        <div className="col-9 card-information">
-          <Information/>
-        </div>
-        
-        <div className="col-3 card-information">
-          <div className='row box-content-up'>
-            <div className='content-wheater clearfix'>
-             <Weather/>
-            </div>
-          </div>
-          <div className='row box-content-down'>
-          <div className='content-news'>
-            <p>
-        Israel Today
-        </p>
-        {articles.map((item,i) => 
-          <Feed
-            key={i}
-            title={item.item.title}
-            link = {item.item.link}
-            date = {item.item.pubDate}
-          />
-        
-        )}
-          </div>
-          </div>
-        </div>
-    </div>
 
-      </header>
+    <div id="Appp" className="App">
+      <body className="App-header">
+        <div className="container">
+          <div className="col-9 card-information">
+            <Information/>
+          </div>
+          
+          <div className="col-3 card-information">
+            
+              <Weather/>
+            
+          </div>
+        </div>
+
+      
+      <footer>
+      <div class="slider">
+	        <div class="slide-track">
+          {articles.map((item,i) => 
+                  <Feed
+                    key={i}
+                    title={item.item.title}
+                    link = {item.item.link}
+                    date = {item.item.pubDate}
+                  />
+                )}
+          </div>
+      </div>
+      </footer>
+      </body>
     </div>
   );
 }
