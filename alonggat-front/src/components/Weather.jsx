@@ -1,7 +1,6 @@
-import React, { useEffect } from 'react';
-import ReactWeather, { useOpenWeather } from "react-open-weather" ;
+import ReactWeather, { useOpenWeather } from 'react-open-weather';
 
-const useWeatherData = (refreshInterval) => {
+const Weather = () => {
   const { data, isLoading, errorMessage } = useOpenWeather({
     key: 'bfd1b980aa5416c251b43fb2f1ba6c22',
     lat: '31.60998',
@@ -9,27 +8,6 @@ const useWeatherData = (refreshInterval) => {
     lang: 'en',
     unit: 'metric', // values are (metric, standard, imperial)
   });
-
-  useEffect(() => {
-    const intervalId = setInterval(() => {
-      console.log('El componente Weather se ha actualizado');
-    }, refreshInterval);
-
-    return () => {
-      clearInterval(intervalId);
-    };
-  }, [refreshInterval]);
-
-  return { data, isLoading, errorMessage };
-};
-
-const Weather = () => {
-  const { data, isLoading, errorMessage } = useWeatherData(500);
-
-  useEffect(() => {
-    console.log(data); // Verificar los datos en la consola
-  }, [data]);
-
   return (
     <ReactWeather
       isLoading={isLoading}

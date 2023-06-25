@@ -2,7 +2,7 @@ const Feed = ({title, link , date}) => {
     let formatted = {day: "numeric" , month: "long" , year:"numeric"}
 
     let articleDate = new Date(date).toLocaleDateString("en-GB", formatted)
-    console.log(title)
+    // console.log(title)
     return(
         <>
         <div class="slide">
